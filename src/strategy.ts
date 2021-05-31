@@ -63,7 +63,7 @@ export class Strategy extends OAuth2Strategy {
 	) {
 		options.authorizationURL = options.authorizationURL || 'https://shikimori.one/oauth/authorize?';
 		options.tokenURL = options.tokenURL || 'https://shikimori.one/oauth/token';
-		options.scopeSeparator = options.scopeSeparator || ' ';
+		options.scopeSeparator = options.scopeSeparator || '+';
 		options.customHeaders = options.customHeaders || {};
 
 		if (!options.customHeaders['User-Agent']) {
@@ -123,18 +123,13 @@ export class Strategy extends OAuth2Strategy {
 
 	// eslint-disable-next-line class-methods-use-this, @typescript-eslint/no-unused-vars
 	public authorizationParams(options: StrategyOptions): Record<string, string> {
-		const params = {};
+		const params: Record<string, string> = {};
 
-		// Maybe later shikimori add dynamic scope
-		/*
-		if (options.scope instanceof Array) {
+		if (Array.isArray(options.scope)) {
 			params.scope = options.scope.join(options.scopeSeparator);
-		}
-
-		if (options.scope instanceof String) {
+		} else if (typeof options.scope === 'string') {
 			params.scope = options.scope;
 		}
-		*/
 
 		return params;
 	}

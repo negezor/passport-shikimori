@@ -35,7 +35,8 @@ passport.use(new ShikimoriStrategy(
 	{
 		clientID: 'id',
 		clientSecret: 'secret',
-		callbackURL: 'callbackURL'
+		callbackURL: 'callbackURL',
+		scope: ['email', 'user_rates']
 	},
 	(accessToken, refreshToken, profile, done) => {
 		User.findOne({
@@ -81,7 +82,8 @@ const shikimoriStrategy = new ShikimoriStrategy(
 	{
 		clientID: 'id',
 		clientSecret: 'secret',
-		callbackURL: 'callbackURL'
+		callbackURL: 'callbackURL',
+		scope: ['email', 'user_rates']
 	},
 	(accessToken, refreshToken, profile, done) => {
 		profile.refreshToken = refreshToken; // store this for later refreshes
