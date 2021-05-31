@@ -1,6 +1,6 @@
 {
 	"name": "passport-shikimori",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Passport strategy for authentication with Shikimori (shikimori.one)",
 	"license": "MIT",
 	"author": {
