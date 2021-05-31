@@ -1,0 +1,73 @@
+{
+	"name": "passport-shikimori",
+	"version": "1.0.0",
+	"description": "Passport strategy for authentication with Shikimori (shikimori.one)",
+	"license": "MIT",
+	"author": {
+		"name": "Vladlen (Negezor)",
+		"email": "negezor@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/negezor/passport-shikimori.git"
+	},
+	"homepage": "https://github.com/negezor/passport-shikimori#readme",
+	"bugs": "https://github.com/negezor/passport-shikimori/issues",
+	"keywords": [
+		"passport",
+		"shikimori",
+		"auth",
+		"authentication",
+		"oauth2",
+		"identity"
+	],
+	"files": [
+		"lib"
+	],
+	"main": "./lib/index.js",
+	"types": "./lib/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./lib/index.mjs",
+			"require": "./lib/index.js"
+		}
+	},
+	"sideEffects": false,
+	"engines": {
+		"node": ">=12.0.0"
+	},
+	"devDependencies": {
+		"@types/express": "^4.17.12",
+		"@types/jest": "^26.0.23",
+		"@types/passport": "^1.0.6",
+		"@types/passport-oauth2": "^1.4.10",
+		"@typescript-eslint/eslint-plugin": "^4.25.0",
+		"@typescript-eslint/parser": "^4.25.0",
+		"eslint": "7.27.0",
+		"eslint-config-airbnb-base": "^14.2.1",
+		"eslint-plugin-import": "^2.23.4",
+		"express": "^4.17.1",
+		"jest": "^27.0.3",
+		"passport": "^0.4.1",
+		"rollup": "^2.50.5",
+		"rollup-plugin-typescript2": "^0.30.0",
+		"ts-jest": "^27.0.2",
+		"typedoc": "^0.20.36",
+		"typedoc-plugin-markdown": "^3.8.2",
+		"typescript": "^4.3.2"
+	},
+	"scripts": {
+		"prepare": "yarn run rollup:build && yarn run test",
+		"build": "yarn run rollup:build",
+		"watch": "yarn run rollup:watch",
+		"rollup:build": "rollup -c",
+		"rollup:watch": "yarn run rollup:build --watch",
+		"test": "yarn run test:jest && yarn run test:eslint",
+		"test:jest": "jest --config jest.config.json --no-cache",
+		"test:eslint": "eslint --ext .ts --ignore-path .gitignore src/**/*.ts",
+		"docs:generate": "typedoc --theme markdown --out docs/api-reference --excludeExternals --readme none src"
+	},
+	"dependencies": {
+		"passport-oauth2": "^1.5.0"
+	}
+}
