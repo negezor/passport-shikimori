@@ -5,8 +5,8 @@
 
 Passport strategy for authentication with [Shikimori](https://shikimori.one) through the OAuth 2.0 API.
 
-| 📖 [Documentation](docs/) |
-|---------------------------|
+| 📖 [Documentation](docs/) | ⛑ [Shikimori OAuth2 Guide](https://shikimori.one/oauth) | 🎫 [Shikimori OAuth2 Applications](https://shikimori.one/oauth/applications) |
+|---------------------------|---------------------------------------------------|-------------------------------------------------------------------------------------|
 
 ## Installation
 > **[Node.js](https://nodejs.org/) 12.0.0 or newer is required**
