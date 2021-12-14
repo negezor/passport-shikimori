@@ -116,7 +116,7 @@ export class Strategy extends OAuth2Strategy {
 					provider: 'shikimori'
 				});
 			} catch (e) {
-				done(e);
+				done(e as Error);
 			}
 		});
 	}
