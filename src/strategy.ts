@@ -52,7 +52,7 @@ export class Strategy extends OAuth2Strategy {
     ) {
         options.authorizationURL = options.authorizationURL || 'https://shikimori.one/oauth/authorize?';
         options.tokenURL = options.tokenURL || 'https://shikimori.one/oauth/token';
-        options.scopeSeparator = options.scopeSeparator || '+';
+        options.scopeSeparator = options.scopeSeparator || ' ';
         options.customHeaders = options.customHeaders || {};
 
         if (!options.customHeaders['User-Agent']) {
