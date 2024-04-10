@@ -31,7 +31,6 @@ export class Strategy extends OAuth2Strategy {
         verify: (
             accessToken: string,
             refreshToken: string,
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             params: any,
             profile: Profile,
             done: VerifyCallback
@@ -55,7 +54,6 @@ export class Strategy extends OAuth2Strategy {
             req: Request,
             accessToken: string,
             refreshToken: string,
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             params: any,
             profile: Profile,
             done: VerifyCallback
@@ -81,7 +79,6 @@ export class Strategy extends OAuth2Strategy {
     }
 
     protected get oauth2(): OAuth2Strategy['_oauth2'] {
-        // eslint-disable-next-line no-underscore-dangle
         return this._oauth2;
     }
 
@@ -91,15 +88,12 @@ export class Strategy extends OAuth2Strategy {
         };
 
         // @ts-expect-error use internal state because this can change
-        // eslint-disable-next-line no-underscore-dangle
         if (this.oauth2._useAuthorizationHeaderForGET) {
             headers.Authorization = this.oauth2.buildAuthHeader(token);
-            // eslint-disable-next-line no-param-reassign
             token = '';
         }
 
         // @ts-expect-error default pattern in passport use protected methods...
-        // eslint-disable-next-line no-underscore-dangle
         this.oauth2._request('GET', 'https://shikimori.one/api/users/whoami', headers, '', token, (err, body) => {
             if (err) {
                 done(new InternalOAuthError('failed to fetch user profile', err));
@@ -121,7 +115,6 @@ export class Strategy extends OAuth2Strategy {
         });
     }
 
-    // eslint-disable-next-line class-methods-use-this, @typescript-eslint/no-unused-vars
     public authorizationParams(options: StrategyOptions): Record<string, string> {
         const params: Record<string, string> = {};
 
