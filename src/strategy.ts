@@ -1,12 +1,6 @@
 import OAuth2Strategy from 'passport-oauth2';
 
-import type {
-    Request,
-    StrategyOptions,
-    StrategyOptionsWithRequest,
-    Profile,
-    VerifyCallback
-} from './types';
+import type { Profile, Request, StrategyOptions, StrategyOptionsWithRequest, VerifyCallback } from './types';
 
 const { InternalOAuthError } = OAuth2Strategy;
 
@@ -18,12 +12,7 @@ export class Strategy extends OAuth2Strategy {
     // @ts-expect-error ts... why?
     public constructor(
         options: StrategyOptions,
-        verify: (
-            accessToken: string,
-            refreshToken: string,
-            profile: Profile,
-            done: VerifyCallback
-        ) => void
+        verify: (accessToken: string, refreshToken: string, profile: Profile, done: VerifyCallback) => void,
     );
 
     public constructor(
@@ -34,8 +23,8 @@ export class Strategy extends OAuth2Strategy {
             // biome-ignore lint/suspicious/noExplicitAny: we don't know params
             params: any,
             profile: Profile,
-            done: VerifyCallback
-        ) => void
+            done: VerifyCallback,
+        ) => void,
     );
 
     public constructor(
@@ -45,8 +34,8 @@ export class Strategy extends OAuth2Strategy {
             accessToken: string,
             refreshToken: string,
             profile: Profile,
-            done: VerifyCallback
-        ) => void
+            done: VerifyCallback,
+        ) => void,
     );
 
     public constructor(
@@ -55,11 +44,11 @@ export class Strategy extends OAuth2Strategy {
             req: Request,
             accessToken: string,
             refreshToken: string,
-             // biome-ignore lint/suspicious/noExplicitAny: we don't know params
+            // biome-ignore lint/suspicious/noExplicitAny: we don't know params
             params: any,
             profile: Profile,
-            done: VerifyCallback
-        ) => void
+            done: VerifyCallback,
+        ) => void,
     ) {
         options.authorizationURL = options.authorizationURL || 'https://shikimori.one/oauth/authorize?';
         options.tokenURL = options.tokenURL || 'https://shikimori.one/oauth/token';
@@ -86,7 +75,7 @@ export class Strategy extends OAuth2Strategy {
 
     public userProfile(token: string, done: (err: Error | null, profile?: Profile) => void): void {
         const headers: Record<string, string> = {
-            'Client-ID': this.clientID
+            'Client-ID': this.clientID,
         };
 
         // @ts-expect-error use internal state because this can change
@@ -110,7 +99,7 @@ export class Strategy extends OAuth2Strategy {
                 done(null, {
                     ...whoami,
                     id: String(whoami.id),
-                    provider: 'shikimori'
+                    provider: 'shikimori',
                 });
             } catch (e) {
                 done(e as Error);

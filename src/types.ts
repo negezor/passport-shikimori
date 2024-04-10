@@ -1,6 +1,6 @@
 import type { Request } from 'express';
 import type { Profile as PassportProfile } from 'passport';
-import type { _StrategyOptionsBase, VerifyCallback } from 'passport-oauth2';
+import type { VerifyCallback, _StrategyOptionsBase } from 'passport-oauth2';
 
 export type { Request, VerifyCallback };
 
@@ -38,4 +38,4 @@ export type Profile = PassportProfile & {
     website: string | null;
     birth_on: string | null;
     locale: 'ru' | 'en';
-}
+};
