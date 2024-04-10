@@ -110,12 +110,6 @@ export class Strategy extends OAuth2Strategy {
     public authorizationParams(options: StrategyOptions): Record<string, string> {
         const params: Record<string, string> = {};
 
-        if (Array.isArray(options.scope)) {
-            params.scope = options.scope.join(options.scopeSeparator);
-        } else if (typeof options.scope === 'string') {
-            params.scope = options.scope;
-        }
-
         return params;
     }
 }
