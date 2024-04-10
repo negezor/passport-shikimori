@@ -32,7 +32,7 @@
 
 ### constructor
 
-• **new Strategy**(`options`, `verify`)
+• **new Strategy**(`options`, `verify`): [`Strategy`](Strategy.md)
 
 #### Parameters
 
@@ -41,15 +41,19 @@
 | `options` | [`StrategyOptions`](../interfaces/StrategyOptions.md) |
 | `verify` | (`accessToken`: `string`, `refreshToken`: `string`, `profile`: [`Profile`](../README.md#profile), `done`: `VerifyCallback`) => `void` |
 
+#### Returns
+
+[`Strategy`](Strategy.md)
+
 #### Overrides
 
 OAuth2Strategy.constructor
 
 #### Defined in
 
-[strategy.ts:19](https://github.com/negezor/passport-shikimori/blob/3e17b01/src/strategy.ts#L19)
+[strategy.ts:13](https://github.com/negezor/passport-shikimori/blob/673d3f51c8ebaa991cdb8bfc7e5c9acbe5d13cef/src/strategy.ts#L13)
 
-• **new Strategy**(`options`, `verify`)
+• **new Strategy**(`options`, `verify`): [`Strategy`](Strategy.md)
 
 #### Parameters
 
@@ -58,22 +62,30 @@ OAuth2Strategy.constructor
 | `options` | [`StrategyOptions`](../interfaces/StrategyOptions.md) |
 | `verify` | (`accessToken`: `string`, `refreshToken`: `string`, `params`: `any`, `profile`: [`Profile`](../README.md#profile), `done`: `VerifyCallback`) => `void` |
 
+#### Returns
+
+[`Strategy`](Strategy.md)
+
 #### Overrides
 
 OAuth2Strategy.constructor
 
 #### Defined in
 
-[strategy.ts:29](https://github.com/negezor/passport-shikimori/blob/3e17b01/src/strategy.ts#L29)
+[strategy.ts:18](https://github.com/negezor/passport-shikimori/blob/673d3f51c8ebaa991cdb8bfc7e5c9acbe5d13cef/src/strategy.ts#L18)
 
-• **new Strategy**(`options`, `verify`)
+• **new Strategy**(`options`, `verify`): [`Strategy`](Strategy.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `options` | [`StrategyOptionsWithRequest`](../interfaces/StrategyOptionsWithRequest.md) |
-| `verify` | (`req`: `Request`<`ParamsDictionary`, `any`, `any`, `ParsedQs`, `Record`<`string`, `any`\>\>, `accessToken`: `string`, `refreshToken`: `string`, `profile`: [`Profile`](../README.md#profile), `done`: `VerifyCallback`) => `void` |
+| `verify` | (`req`: `Request`\<`ParamsDictionary`, `any`, `any`, `ParsedQs`, `Record`\<`string`, `any`\>\>, `accessToken`: `string`, `refreshToken`: `string`, `profile`: [`Profile`](../README.md#profile), `done`: `VerifyCallback`) => `void` |
+
+#### Returns
+
+[`Strategy`](Strategy.md)
 
 #### Overrides
 
@@ -81,7 +93,7 @@ OAuth2Strategy.constructor
 
 #### Defined in
 
-[strategy.ts:41](https://github.com/negezor/passport-shikimori/blob/3e17b01/src/strategy.ts#L41)
+[strategy.ts:30](https://github.com/negezor/passport-shikimori/blob/673d3f51c8ebaa991cdb8bfc7e5c9acbe5d13cef/src/strategy.ts#L30)
 
 ## Properties
 
@@ -91,7 +103,7 @@ OAuth2Strategy.constructor
 
 #### Defined in
 
-[strategy.ts:16](https://github.com/negezor/passport-shikimori/blob/3e17b01/src/strategy.ts#L16)
+[strategy.ts:10](https://github.com/negezor/passport-shikimori/blob/673d3f51c8ebaa991cdb8bfc7e5c9acbe5d13cef/src/strategy.ts#L10)
 
 ___
 
@@ -105,13 +117,13 @@ OAuth2Strategy.name
 
 #### Defined in
 
-[strategy.ts:14](https://github.com/negezor/passport-shikimori/blob/3e17b01/src/strategy.ts#L14)
+[strategy.ts:8](https://github.com/negezor/passport-shikimori/blob/673d3f51c8ebaa991cdb8bfc7e5c9acbe5d13cef/src/strategy.ts#L8)
 
 ## Accessors
 
 ### oauth2
 
-• `Protected` `get` **oauth2**(): `OAuth2`
+• `get` **oauth2**(): `OAuth2`
 
 #### Returns
 
@@ -119,13 +131,13 @@ OAuth2Strategy.name
 
 #### Defined in
 
-[strategy.ts:83](https://github.com/negezor/passport-shikimori/blob/3e17b01/src/strategy.ts#L83)
+[strategy.ts:72](https://github.com/negezor/passport-shikimori/blob/673d3f51c8ebaa991cdb8bfc7e5c9acbe5d13cef/src/strategy.ts#L72)
 
 ## Methods
 
 ### authorizationParams
 
-▸ **authorizationParams**(`options`): `Record`<`string`, `string`\>
+▸ **authorizationParams**(`options`): `Record`\<`string`, `string`\>
 
 #### Parameters
 
@@ -135,7 +147,7 @@ OAuth2Strategy.name
 
 #### Returns
 
-`Record`<`string`, `string`\>
+`Record`\<`string`, `string`\>
 
 #### Overrides
 
@@ -143,7 +155,7 @@ OAuth2Strategy.authorizationParams
 
 #### Defined in
 
-[strategy.ts:125](https://github.com/negezor/passport-shikimori/blob/3e17b01/src/strategy.ts#L125)
+[strategy.ts:110](https://github.com/negezor/passport-shikimori/blob/673d3f51c8ebaa991cdb8bfc7e5c9acbe5d13cef/src/strategy.ts#L110)
 
 ___
 
@@ -168,4 +180,4 @@ OAuth2Strategy.userProfile
 
 #### Defined in
 
-[strategy.ts:88](https://github.com/negezor/passport-shikimori/blob/3e17b01/src/strategy.ts#L88)
+[strategy.ts:76](https://github.com/negezor/passport-shikimori/blob/673d3f51c8ebaa991cdb8bfc7e5c9acbe5d13cef/src/strategy.ts#L76)

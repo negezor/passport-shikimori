@@ -23,7 +23,7 @@
 
 #### Defined in
 
-[types.ts:9](https://github.com/negezor/passport-shikimori/blob/3e17b01/src/types.ts#L9)
+[types.ts:8](https://github.com/negezor/passport-shikimori/blob/673d3f51c8ebaa991cdb8bfc7e5c9acbe5d13cef/src/types.ts#L8)
 
 ___
 
@@ -33,4 +33,4 @@ ___
 
 #### Defined in
 
-[types.ts:11](https://github.com/negezor/passport-shikimori/blob/3e17b01/src/types.ts#L11)
+[types.ts:10](https://github.com/negezor/passport-shikimori/blob/673d3f51c8ebaa991cdb8bfc7e5c9acbe5d13cef/src/types.ts#L10)
