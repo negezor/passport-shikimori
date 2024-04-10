@@ -1,6 +1,6 @@
 import OAuth2Strategy from 'passport-oauth2';
 
-import {
+import type {
     Request,
     StrategyOptions,
     StrategyOptionsWithRequest,
@@ -31,6 +31,7 @@ export class Strategy extends OAuth2Strategy {
         verify: (
             accessToken: string,
             refreshToken: string,
+            // biome-ignore lint/suspicious/noExplicitAny: we don't know params
             params: any,
             profile: Profile,
             done: VerifyCallback
@@ -54,6 +55,7 @@ export class Strategy extends OAuth2Strategy {
             req: Request,
             accessToken: string,
             refreshToken: string,
+             // biome-ignore lint/suspicious/noExplicitAny: we don't know params
             params: any,
             profile: Profile,
             done: VerifyCallback
@@ -90,6 +92,7 @@ export class Strategy extends OAuth2Strategy {
         // @ts-expect-error use internal state because this can change
         if (this.oauth2._useAuthorizationHeaderForGET) {
             headers.Authorization = this.oauth2.buildAuthHeader(token);
+            // biome-ignore lint/style/noParameterAssign: be simple
             token = '';
         }
 
