@@ -6,40 +6,40 @@ export type { Request, VerifyCallback };
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export interface StrategyOptions extends _StrategyOptionsBase {
-	passReqToCallback?: false;
+    passReqToCallback?: false;
 
-	userAgent?: string;
+    userAgent?: string;
 }
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export interface StrategyOptionsWithRequest extends _StrategyOptionsBase {
-	passReqToCallback: true;
+    passReqToCallback: true;
 
-	userAgent?: string;
+    userAgent?: string;
 }
 
 export type Profile = PassportProfile & {
-	provider: 'shikimori';
+    provider: 'shikimori';
 
-	nickname: string;
-	email?: string;
-	avatar: string;
-	image: {
-		x160: string;
-		x148: string;
-		x80: string;
-		x64: string;
-		x48: string;
-		x32: string;
-		x16: string;
-	};
-	// eslint-disable-next-line camelcase
-	last_online_at: string;
-	url: string;
-	name: string | null;
-	sex: string | null;
-	website: string | null;
-	// eslint-disable-next-line camelcase
-	birth_on: string | null;
-	locale: 'ru' | 'en';
+    nickname: string;
+    email?: string;
+    avatar: string;
+    image: {
+        x160: string;
+        x148: string;
+        x80: string;
+        x64: string;
+        x48: string;
+        x32: string;
+        x16: string;
+    };
+    // eslint-disable-next-line camelcase
+    last_online_at: string;
+    url: string;
+    name: string | null;
+    sex: string | null;
+    website: string | null;
+    // eslint-disable-next-line camelcase
+    birth_on: string | null;
+    locale: 'ru' | 'en';
 }

@@ -32,21 +32,21 @@ The Shikimori authentication strategy authenticates users via a Shikimori user a
 import { Strategy as ShikimoriStrategy } from 'passport-shikimori';
 
 passport.use(new ShikimoriStrategy(
-	{
-		clientID: 'id',
-		clientSecret: 'secret',
-		callbackURL: 'callbackURL',
-		scope: ['email', 'user_rates']
-	},
-	(accessToken, refreshToken, profile, done) => {
-		User.findOne({
-			where: {
-				shikimoriId: profile.id
-			}
-		})
-			.then(user => done(null, user))
-			.catch(error => done(error));
-	}
+    {
+        clientID: 'id',
+        clientSecret: 'secret',
+        callbackURL: 'callbackURL',
+        scope: ['email', 'user_rates']
+    },
+    (accessToken, refreshToken, profile, done) => {
+        User.findOne({
+            where: {
+                shikimoriId: profile.id
+            }
+        })
+            .then(user => done(null, user))
+            .catch(error => done(error));
+    }
 ));
 ```
 
@@ -59,13 +59,13 @@ For example, as a route middleware in an Express app:
 ```ts
 app.get('/auth/shikimori', passport.authenticate('shikimori'));
 app.get(
-	'/auth/shikimori/callback',
-	passport.authenticate('shikimori', {
-		failureRedirect: '/'
-	}),
-	(req, res) => {
-		res.redirect('/secretstuff') // Successful auth
-	}
+    '/auth/shikimori/callback',
+    passport.authenticate('shikimori', {
+        failureRedirect: '/'
+    }),
+    (req, res) => {
+        res.redirect('/secretstuff') // Successful auth
+    }
 );
 ```
 
@@ -79,23 +79,23 @@ import { Strategy as ShikimoriStrategy } from 'passport-shikimori';
 import refresh from 'passport-oauth2-refresh';
 
 const shikimoriStrategy = new ShikimoriStrategy(
-	{
-		clientID: 'id',
-		clientSecret: 'secret',
-		callbackURL: 'callbackURL',
-		scope: ['email', 'user_rates']
-	},
-	(accessToken, refreshToken, profile, done) => {
-		profile.refreshToken = refreshToken; // store this for later refreshes
-		
-		User.findOne({
-			where: {
-				shikimoriId: profile.id
-			}
-		})
-			.then(user => done(null, user))
-			.catch(error => done(error));
-	}
+    {
+        clientID: 'id',
+        clientSecret: 'secret',
+        callbackURL: 'callbackURL',
+        scope: ['email', 'user_rates']
+    },
+    (accessToken, refreshToken, profile, done) => {
+        profile.refreshToken = refreshToken; // store this for later refreshes
+        
+        User.findOne({
+            where: {
+                shikimoriId: profile.id
+            }
+        })
+            .then(user => done(null, user))
+            .catch(error => done(error));
+    }
 );
 
 passport.use(shikimoriStrategy);
@@ -108,7 +108,7 @@ refresh.use(shikimoriStrategy);
 refresh.requestNewAccessToken('shikimori', profile.refreshToken, (error, accessToken, refreshToken) => {
     if (error) {
         throw error; // boys, we have an error here.
-	}
+    }
     
     profile.accessToken = accessToken; // store this new one for our new requests!
 });
